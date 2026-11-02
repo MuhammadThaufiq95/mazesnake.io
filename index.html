@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+        <meta name="theme-color" content="#0b0b14">
+        <title>MazeSnake.io</title>
+        <link rel="icon" href="img/logo.svg">
+        <link rel="manifest" href="manifest.json">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <a class="brand" href="index.html">
+                <img class="logo" src="img/logo.svg" alt="MazeSnake logo">
+                <h1 class="title">MAZE<span>SNAKE</span>.IO</h1>
+            </a>
+        </header>
+
+        <main class="game-wrap">
+            <div class="game-layout">
+
+                <section class="play-area">
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-label">Score</span>
+                            <span class="stat-value" id="ui-score">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best</span>
+                            <span class="stat-value" id="ui-best">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Level</span>
+                            <span class="stat-value" id="ui-level">1/3</span>
+                        </div>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-head">
+                            <span>Food</span>
+                            <span id="ui-food">0/8</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar" id="ui-food-bar"></div>
+                        </div>
+                    </div>
+
+                    <canvas id="game"></canvas>
+
+                    <div class="controls-row">
+                        <div class="effect-badge" id="ui-effect">No power-up</div>
+                        <button class="btn" id="btn-pause">Pause</button>
+                        <button class="btn btn-alt" id="btn-restart">Restart</button>
+                    </div>
+
+                    <div class="dpad">
+                        <button data-dir="up" aria-label="Up">&#9650;</button>
+                        <button data-dir="left" aria-label="Left">&#9664;</button>
+                        <button data-dir="right" aria-label="Right">&#9654;</button>
+                        <button data-dir="down" aria-label="Down">&#9660;</button>
+                    </div>
+                </section>
+
+                <aside class="side-panel">
+                    <div class="panel">
+                        <h2>How to play</h2>
+                        <ul>
+                            <li>Move with <b>Arrow keys</b>, <b>WASD</b>, swipe, or the D-pad</li>
+                            <li>Eat the red dots to grow</li>
+                            <li>Don't hit walls or your own body</li>
+                            <li>Eat enough food to clear the level</li>
+                            <li><b>P</b> pauses, <b>Enter</b> confirms</li>
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <h2>Power-ups</h2>
+                        <ul class="legend">
+                            <li><span class="dot" style="background:#ffd700"></span><b>Gold</b> +5 score</li>
+                            <li><span class="dot" style="background:#00e5ff"></span><b>Slow</b> slows the snake</li>
+                            <li><span class="dot" style="background:#d0a0ff"></span><b>Ghost</b> pass through yourself</li>
+                        </ul>
+                        <p class="note">Power-ups disappear if you wait too long.</p>
+                    </div>
+                </aside>
+
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2026 MazeSnake.io &nbsp;·&nbsp; Made by Muh. Thaufiq</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
