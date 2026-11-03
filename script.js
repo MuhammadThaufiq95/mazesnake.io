@@ -78,8 +78,8 @@ const isTouch = window.matchMedia("(pointer: coarse)").matches;
 const tapOrEnter = isTouch ? "Tap the screen" : "Press Enter";
 const SWIPE_MIN = 24;
 
-const BASE_SPEED = 150;
-const MIN_SPEED = 70;
+const BASE_SPEED = 220;
+const MIN_SPEED = 120;
 const FOOD_GOAL = 8;
 const POWER_CHANCE = 0.25;
 const POWER_LIFE = 50;
@@ -389,7 +389,7 @@ function nextLevel() {
 }
 
 function getDelay() {
-    let delay = Math.max(MIN_SPEED, BASE_SPEED - eaten * 8);
+    let delay = Math.max(MIN_SPEED, BASE_SPEED - eaten * 5);
     if (effect.type === "slow") delay *= 1.6;
     return delay;
 }
